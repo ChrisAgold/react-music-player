@@ -1,9 +1,10 @@
 import React from 'react';
 import LibrarySong from './LibrarySong'
 
-const Library = ({songs, setCurrentSong, audioRef, isPlaying, setSongs}) => {
+const Library = ({songs, setCurrentSong, audioRef, isPlaying, setSongs, libraryStatus}) => {
     return (
-        <div className="library">
+        // get library  of songs to toggle on and off screen
+        <div className={`library ${libraryStatus ? 'active-library' : ""}`}>
             <h2>Library</h2>
             <div className="library-songs">
                 {songs.map((song) => (
