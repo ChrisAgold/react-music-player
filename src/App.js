@@ -1,4 +1,4 @@
-import React, {useState,useRef} from "react";
+import React, {useState, useRef} from "react";
 import Player from './components/Player';
 import Song from './components/Song';
 import './styles/app.scss';
@@ -33,7 +33,13 @@ function App() {
                 setSongInfo={setSongInfo}
                 songInfo={songInfo}
             />
-            <Library  songs={songs} setCurrentSong={setCurrentSong}/>
+            <Library
+                audioRef={audioRef}
+                songs={songs}
+                setCurrentSong={setCurrentSong}
+                isPlaying={isPlaying}
+                setSongs={setSongs}
+            />
             <audio
                 onTimeUpdate={timeUpdateHandler}
                 onLoadedMetadata={timeUpdateHandler}
